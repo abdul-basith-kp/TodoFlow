@@ -1,0 +1,213 @@
+
+.nav-bar{
+    width: 90%;
+    margin: 2rem auto;
+}
+.welcome-text{
+    margin: 0;
+}
+.username-span{
+    color: purple;
+}
+.main-nav-buttons a{
+    color: black;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+}
+.main-nav-buttons a:hover{
+    text-decoration: underline;
+}
+.settings-container{
+    gap: 1rem;
+}
+.settings-logo, .account-logo, .mode-logo{
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.settings-logo:hover, .account-logo:hover, .mode-logo:hover{
+    background-color: rgb(129, 129, 129);
+}
+.logout-btn{
+    background-color: rgb(250, 18, 18);
+    color: rgb(255, 254, 254);
+    font-size: 1.3rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+}
+.logout-btn:hover{
+    background-color: rgb(95, 17, 17);
+}
+.hamburger-btn{
+    width: 4rem;
+    display: none;
+}
+.menu-container{
+    font-size: 1.5rem;
+    display: none;
+    gap: 1rem;
+    background-color: white;
+    position: absolute;
+    right: 2rem;
+    border: solid 1px black;
+    padding: 2rem;
+    border-radius: 1rem;
+    z-index: 999;
+}
+.search-container{
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+}
+.search-bar{
+    width: 50%;
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    border: solid 2px black;
+}
+.suggestion-container{
+    display: none;
+    width: 50%;
+    height: 20rem;
+    margin: auto;
+    overflow-y: scroll;
+    background-color: #dff0ee;
+    border-radius: 1rem;
+    scrollbar-width: none;
+    position: absolute;
+    left: 25%;
+    top: 100%;
+}
+.search-cross-btn{
+    display: none;
+    width: 3rem;
+    border-radius: 50%;
+}
+.search-cross-btn:hover{
+    background-color: #ccc;
+}
+.suggestion{
+    padding: 0.5rem 1rem;
+    text-align: left;
+}
+.suggestion:hover{
+ background-color: aquamarine;
+}
+.add-task-btn{
+    height: 3rem;
+    width: 3rem;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: solid 2px black;
+    border-radius: 50%;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+}
+.add-task-btn:hover{
+    background-color: rgb(193, 193, 193);
+}
+.message{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.task-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin:2rem;
+}
+.task-box{
+    padding: 1rem;
+    border: double 2px black;
+    border-radius: 1rem;
+    background-color: rgba(0, 255, 255, 0.075);
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+}
+.description{
+    margin: 1rem 0;
+    overflow-wrap: anywhere ;
+}
+.task-buttons{
+    gap: 1rem;
+    margin-top: auto;
+}
+.due-date{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: dotted;
+    background-color: rgba(202, 155, 253, 0.312);
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 1rem 0;
+   
+}
+.edit-btn, .delete-btn, .complete-btn{
+    border: none;
+    background: none;
+}
+.edit-img, .delete-img, .complete-img{
+    width: 2rem;
+    border-radius: 50%;
+    border: none;
+}
+.edit-img:hover, .delete-img:hover, .complete-img:hover{
+    background-color: rgb(184, 183, 183);
+}
+.copy-right-text{
+    text-align: center;
+    margin: 2rem;
+}
+hr {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+.active{
+    background-color: rgb(205, 169, 238);
+}
+@media (max-width: 1400px){
+
+    .logout-btn, .settings-container, .main-nav-buttons{
+        display: none;
+    }
+    .hamburger-btn{
+        display: block;
+    }
+}
+/* laptop */
+@media (max-width: 1200px) {
+   .task-container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+
+}
+/* Tablet */
+@media (max-width: 768px) {
+   .task-container{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+}
+
+
+

@@ -1,0 +1,30 @@
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+.user-container{
+    background-color: rgba(0, 0, 0, 0.163);
+    padding: 4rem 6rem;
+    border-radius: 1rem;
+}
+
+
+
+.user-profile{
+    width: 10rem;
+    border-radius: 50%;
+    border: solid 1px black;
+}
+
+.user-username{
+    font-size: 2rem;
+}
+
+
+.user-user-id{
+    font-size: 1.5rem;
+}

@@ -1,0 +1,22 @@
+
+    
+body{
+    background-color: rgba(0, 0, 0, 0.426);
+}
+
+form{
+    padding: 4rem;
+    border: solid black 1px;
+    border-radius: 1rem;
+    gap: 1rem;
+    background-color: white;
+    height: 15rem;
+    width: 15rem;
+}
+input{
+    padding: 0.5rem;
+}
+.error-message{
+    color: red;
+    height: 20%;
+}

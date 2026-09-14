@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/community-page.css') }}">
+{%endblock%}
+
+
+{% block content %} 
+<h1 class="main-heading">Chat with Community Here</h1>
+
+<div class="msg-container"> </div>
+
+<div class="input-container fr c">
+    <input class="input-bar" type="text" name="input-text" placeholder="Hello..">
+    <img class="send-btn" src="../static/images/send-icon.png" alt="">
+</div>
+
+{% endblock %}
+
+{% block scripts %} 
+    <script src="../static/js/communityPage.js"></script>
+{% endblock %}

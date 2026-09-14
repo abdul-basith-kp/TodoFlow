@@ -1,0 +1,49 @@
+
+
+.nav-bar{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+.logo-img{
+    width: 7rem;
+}
+.nav-btn{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    margin: 0 1rem;
+}
+.register-btn{
+    background: linear-gradient(135deg, #06B6D4, #6366F1, #8B5CF6);
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.login-btn{
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    outline: solid 2px black;
+}
+.nav-btn:hover{
+    background-color: rgb(190, 188, 188);
+}
+
+footer{
+    min-height: 100vh;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    /* tablet styles */
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    /* mobile styles */
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+    /* small phone styles */
+}

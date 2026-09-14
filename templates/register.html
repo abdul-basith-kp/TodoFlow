@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+    
+
+    <title>{% block title %} Register Page {% endblock %}</title>
+
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
+    {% endblock %}
+
+    {% block content %} 
+    <div class="register-page fc c">
+        <div class="register-container fr c">
+
+            <div class="register-text fc c">
+                <h1>Big goals start with <br> small tasks.</h1>
+                <p>Take control of your day and turn plans into achievements.</p>
+            </div>
+
+            <div class="register-box">
+                <form class="fc c" action="/register" method="POST">
+                    <p class="error-message">{{ message }}</p>
+                    <input type="text" name="username" placeholder="Enter Username">
+                    <input type="text" name="password" placeholder="Enter Password">
+                    <button type="submit">Register</button>
+                    <p>Alredy have an account? <a href="{{ url_for('login_page') }}">Login</a></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+    {% endblock %}
+
+
+    {% block scripts %}
+    <script src="../static/js/register.js"></script>
+    {% endblock %}
+

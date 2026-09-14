@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Account Page
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/account.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="user-container fc c">
+    <h1>Account</h1>
+    <img class="user-profile" src="../static/images/user-logo.png" alt="">
+    <p  class="user-username">Username</p>
+    <p class="user-user-id">user-id</p>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="../static/js/account.js"> </script>
+{% endblock %}

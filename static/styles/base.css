@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    background-color: white;
+    color: black;
+}
+.fr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.fc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sb{
+    justify-content: space-between;
+}
+.c{
+    justify-content: center;
+}
+.fe{
+    justify-content: flex-end;
+}

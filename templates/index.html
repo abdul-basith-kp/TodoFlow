@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+    {% block title %} Index page {% endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    {% endblock %}
+    
+    {% block content %}
+
+
+
+    <div class="nav-bar fr sb">
+        <div>
+        <img class="logo-img" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+        </div>
+        <div>
+            <a class="nav-btn" href="">Home</a>
+            <a class="nav-btn" href="">About</a>
+            <a class="nav-btn" href="">Contact</a>
+        </div>
+        <div>
+            <a class="nav-btn login-btn" href="{{ url_for('login_page') }}">Login</a>
+            <a class="nav-btn register-btn" href="{{  url_for('register_page') }}">Register</a>
+        </div>
+    </div>
+    {% endblock %}
+    
+
+    {% block scripts %}
+    <script src="../static/js/index.js"></script>
+    {% endblock %}
+    
+</html>

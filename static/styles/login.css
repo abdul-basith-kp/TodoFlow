@@ -1,0 +1,20 @@
+
+.login-page{
+    min-height: 100vh;
+}
+.login-container{
+    gap: 10rem;
+}
+.login-text h1{
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+    color: white;
+    color: cyan;
+}
+.login-text p{
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
