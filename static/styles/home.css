@@ -128,7 +128,12 @@
     padding: 1rem;
     border: double 2px black;
     border-radius: 1rem;
-    background-color: rgba(0, 255, 255, 0.075);
+    background-image: url(../images/todo-template-01.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
 }
 .title{
     font-size: 1.5rem;

@@ -187,7 +187,23 @@ function createDeleteButton(taskId, container) {
         deleteTask(taskId);
     })
 }
+function generateRandomImage() {
+    const images = [
+        'todo-template-01.png',
+        'todo-template-02.png',
+        'todo-template-03.png',
+        'todo-template-04.png',
+        'todo-template-05.png',
+        'todo-template-06.png',
+        'todo-template-07.png',
+        'todo-template-08.png',
+        'todo-template-09.png',
+        'todo-template-10.png'
 
+    ]
+    const randomNumber = Math.floor(Math.random()*10)
+    return images[randomNumber]
+}
 let tasks;
 async function showTasks(status='PENDING', titleStartsWith=''){
     tasks = await getTasks(status)
@@ -236,6 +252,7 @@ async function showTasks(status='PENDING', titleStartsWith=''){
         dueDate.innerText = task.due_date
         taskBox.appendChild(dueDate);
 
+        taskBox.style.backgroundImage = `url('../static/images/${generateRandomImage()}')`;
 
         taskBox.appendChild(taskButtons);
         taskContainer.appendChild(taskBox);
