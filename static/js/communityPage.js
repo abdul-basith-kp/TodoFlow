@@ -1,6 +1,5 @@
 
 
-console.log("Hello")
 
 async function getMessages() {
     const response = await fetch('http://127.0.0.1:5000/community_messages')
@@ -64,7 +63,8 @@ async function initializeMessageBox() {
 })
 }
 
+
 showMessages()
 
-
 initializeMessageBox()
+
