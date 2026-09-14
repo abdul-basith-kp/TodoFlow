@@ -1,7 +1,7 @@
 
 
 .nav-bar{
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     margin-top: 2rem;
     border-radius: 1rem;
@@ -10,9 +10,12 @@
     width: 7rem;
 }
 .nav-btn{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(0, 0, 0);
     margin: 0 1rem;
+}
+.nav-btn:hover{
+    text-decoration: underline;
 }
 .register-btn{
     background: linear-gradient(135deg, #06B6D4, #6366F1, #8B5CF6);
@@ -25,8 +28,8 @@
     border-radius: 0.5rem;
     outline: solid 2px black;
 }
-.nav-btn:hover{
-    background-color: rgb(190, 188, 188);
+.login-btn:hover{
+    background-color: rgb(212, 213, 214);
 }
 
 footer{
