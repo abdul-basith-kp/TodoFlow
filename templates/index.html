@@ -25,6 +25,24 @@
             <a class="nav-btn register-btn" href="{{  url_for('register_page') }}">Register</a>
         </div>
     </div>
+
+    <div class="hero-section">
+        <div>
+            <h1 class="hero-main-heading">Turn Your To-Dos <br>Into <span class="hero-main-span">Done</span>.</h1>
+            <p class="hero-main-paragraph">Plan your tasks, prioritize what matters, and keep your day moving — 
+                all in one beautifully simple workspace.</p>
+            <div class="fr c">
+                <a class="hero-get-started-btn" href="">Get Started — It's Free</a>
+                <a class="hero-how-it-works-btn" href="">See How It Works →</a>
+            </div>
+            
+            <p class="hero-trust-paragraph">No clutter. No complicated setup. Just a better way to get things done.</p>
+        </div>
+        <div class="demo-img-container">
+            <img class="home-demo-img"src="{{ url_for('static', filename='images/home-screenshot.png') }}" alt="">
+        </div>
+    </div>
+
     {% endblock %}
     
 
