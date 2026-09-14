@@ -24,6 +24,16 @@ let pendingButtonActive = true;
 let deletedButtonActive = false;
 let completedButtonActive = false;
 
+function changeSearchCatImage(status){
+    const searchCatImage = document.querySelector('.search-bar-cat');
+    const cats = {
+        'PENDING': '../static/images/laying-cat-01.png',
+        'COMPLETED': '../static/images/laying-cat-02.png',
+        'DELETED': '../static/images/laying-cat-03.png'
+    }
+    searchCatImage.setAttribute('src', cats[status])
+}
+
 function setUpNavbar() {
 
     const pendingButtons = document.querySelectorAll(".pending-btn");
@@ -51,6 +61,8 @@ function setUpNavbar() {
         pendingButtonActive = true;
         deletedButtonActive = false;
         completedButtonActive = false;
+
+        changeSearchCatImage("PENDING");
     });
     })
 
@@ -65,6 +77,7 @@ function setUpNavbar() {
         pendingButtonActive = false;
         deletedButtonActive = true;
         completedButtonActive = false;
+        changeSearchCatImage("DELETED");
     });
     })
 
@@ -78,6 +91,7 @@ function setUpNavbar() {
         pendingButtonActive = false;
         deletedButtonActive = false;
         completedButtonActive = true;
+        changeSearchCatImage("COMPLETED");
     });
     })
     accountButtons.forEach(accountButton => {
@@ -111,6 +125,7 @@ function closeMenu() {
     setUpNavbar();
 }
 window.addEventListener('resize', closeMenu)
+
 
 
 async function deleteTask(taskId) {

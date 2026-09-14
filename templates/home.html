@@ -45,7 +45,11 @@
     <hr>
 
     <div class="search-container fr c">
-        <input class="search-bar" type="text" placeholder="Search task here.....">
+        <div class="search-box">
+            <img class="search-bar-cat" src="{{ url_for('static', filename='images/laying-cat-01.png') }}" alt="">
+            <input class="search-bar" type="text" placeholder="Search task here.....">
+        </div>
+        
         <img class="search-cross-btn" src="{{ url_for('static', filename='images/cross-logo.png') }}" alt="">
         <div class="suggestion-container"> </div>
     </div>
