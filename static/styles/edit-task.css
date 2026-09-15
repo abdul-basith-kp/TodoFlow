@@ -1,0 +1,47 @@
+
+/* 
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+ .main-container{
+    height: 100vh;
+ }
+.edit-task-container{
+    padding: 4rem;
+    border-radius: 1rem;
+    border: double 2px black;
+}
+.edit-task-form{
+    gap: 1rem;
+}
+.main-heading{
+    font-size: 4rem;
+    color: #8B5CF6;
+}
+.main-paragraph{
+    font-weight: bold;
+}
+.title, .description{
+    width: 100%;
+    font-size: 1.5rem;
+}
+.save-btn{
+    background-color: rgb(255, 255, 62);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    border: solid 1px black;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+}
+.save-btn:hover{
+    background-color: rgb(234, 234, 135);
+}
+.back-btn{
+    color: red;
+}
+.back-btn:hover{
+    text-decoration: underline;
+}
