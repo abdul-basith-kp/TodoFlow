@@ -192,7 +192,8 @@ hr {
     border-top: 1px solid #ccc;
 }
 .active{
-    background-color: rgb(205, 169, 238);
+    background-color: rgb(171, 108, 230);
+
 }
 @media (max-width: 1400px){
 
