@@ -362,7 +362,42 @@ function setUpSearchBar(){
     })
 }
 
+let darkMode = false;
 
+function ChangeMode(){
+    const navBar = document.querySelector(".nav-bar");
+    const mainNavButtons = document.querySelectorAll(".main-nav-buttons a");
+    const copyRightText = document.querySelector(".copy-right-text");
+    const modeLogo = document.querySelector('.mode-logo');
+    const settingsLogo = document.querySelector('.settings-logo');
+    const userLogo = document.querySelector('.account-logo');
+
+
+    if (! darkMode){
+        document.body.style.backgroundColor = 'black';
+        navBar.style.color = 'white';
+        mainNavButtons.forEach(mainNavBtn=>mainNavBtn.style.color = 'white');
+        copyRightText.style.color = 'white';
+        modeLogo.setAttribute('src', 'static/images/mode-logo-white.png');
+        settingsLogo.setAttribute('src', 'static/images/settings-logo-white.png');
+        userLogo.setAttribute('src', 'static/images/user-logo-white.png');
+        darkMode = true;
+    } else {
+        document.body.style.backgroundColor = 'white';
+        navBar.style.color = 'black';
+        mainNavButtons.forEach(mainNavBtn=>mainNavBtn.style.color = 'black');
+        copyRightText.style.color = 'black'
+        modeLogo.setAttribute('src', 'static/images/mode-logo.png');
+        settingsLogo.setAttribute('src', 'static/images/settings-logo.png');
+        userLogo.setAttribute('src', 'static/images/user-logo.png');
+        darkMode = false;
+    }
+}
+
+function activateDarkModeButton(){
+    const darkModeButton = document.querySelector(".mode-logo")
+    darkModeButton.addEventListener('click', ChangeMode)
+}
 
 async function run() {
     await showTasks();
@@ -371,5 +406,6 @@ async function run() {
     loadCommunity();
     setUpDashboard();
     setUpSearchBar();
+    activateDarkModeButton();
 }
 run()
