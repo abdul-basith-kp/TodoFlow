@@ -8,39 +8,51 @@
 
 
     {% block content %} 
-        <div class="add-task-container fc c">
 
-        <form class="add-task-form fc c" action="{{ url_for('add_task') }}" method="POST">
-            <p class="error-message">{{ message }}</p>
-            <div class="fc">
-                <label for="title">Title</label>
-                <input  name="title" id="title" type="text" required>
+        <div class="add-task-page fr se">
+
+            <div>
+                <h1 class="main-heading">Stay Organized, <br> Stay Productive</h1>
+                <p class="main-paragraph">
+                Add your tasks, keep track of your priorities, and get things done
+                one step at a time.
+                </p>
             </div>
-            
-            <div class="fc">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" required></textarea>
-            </div>
-            <div class="fr">
-                 <div class="fc">
-                    <label for="priority">Priority</label>
-                    <select name="priority" id="priority">
-                        <option value="LOW">LOW</option>
-                        <option value="MEDIUM">MEDIUM</option>
-                        <option value="HIGH">HIGH</option>
-                    </select>
+
+            <div class="add-task-container fc c">
+
+            <form class="add-task-form fc c" action="{{ url_for('add_task') }}" method="POST">
+                <p class="error-message">{{ message }}</p>
+                <div class="w-100">
+                    <label for="title">Title</label>
+                    <input  class='title' name="title" id="title" type="text" required>
+                </div>
+                
+                <div class="w-100">
+                    <label for="description">Description</label>
+                    <textarea class="description" name="description" id="description" required></textarea>
+                </div>
+                <div class="select-option fr">
+                    <div class="fc">
+                        <label for="priority">Priority</label>
+                        <select name="priority" id="priority">
+                            <option value="LOW">LOW</option>
+                            <option value="MEDIUM">MEDIUM</option>
+                            <option value="HIGH">HIGH</option>
+                        </select>
+                    </div>
+                
+                    <div class="fc">
+                        <label for="due-date">Due date</label>
+                        <input id="due-date" name="due-date" type="date" required>
+                    </div>
                 </div>
             
-                <div class="fc">
-                    <label for="due-date">Due date</label>
-                    <input id="due-date" name="due-date" type="date" required>
-                </div>
-            </div>
-           
-            
-            <button>Add Task</button>
-        </form>
-        <a href="{{ url_for('home_page') }}">back</a>
+                
+                <button class="add-task-btn">Add</button>
+            </form>
+            <a class="back-btn" href="{{ url_for('home_page') }}">back</a>
+        </div>
     </div>
     {% endblock %}
 
