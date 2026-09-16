@@ -27,6 +27,14 @@ class TaskManager:
             self.task_repo.create_task(cur, user_id, title, description, priority, due_date)
             conn.commit()
 
+
+    def get_task_by_task_id(self, task_id: int):
+
+        with self.db.get_connection() as conn:
+                cur = conn.cursor()
+                task = self.task_repo.get_task_by_task_id(cur, task_id)
+                return task
+        
     def get_tasks_by_status_and_user_id(self, status, user_id: int):
         with self.db.get_connection() as conn:
             cur = conn.cursor()

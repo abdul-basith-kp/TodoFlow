@@ -12,6 +12,26 @@ class TaskRepo:
         (user_id, title, description, priority, due_date)
         VALUES
         (%s, %s, %s, %s, %s)""",(user_id, title, description, priority, due_date))
+
+
+    def get_task_by_task_id(self, cur, task_id):
+        cur.execute("""
+        SELECT id, user_id, title, description, priority, due_date, created_at, status
+        FROM tasks
+        WHERE id = %s
+        """, (task_id, ))
+        row = cur.fetchone()
+        if not row: return None
+        return Task(
+            id=row[0],
+            user_id=row[1],
+            title=row[2],
+            description=row[3],
+            priority=row[4],
+            due_date=row[5],
+            created_at=row[6],
+            status=row[7]
+        )
   
     def get_tasks_by_status_and_user_id(self, cur, status, user_id):
         cur.execute("""

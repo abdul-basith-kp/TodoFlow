@@ -6,10 +6,12 @@ body{
     justify-content: center;
     align-items: center;
 } */
+
  .main-container{
     height: 100vh;
  }
 .edit-task-container{
+    width: 30rem;
     padding: 4rem;
     border-radius: 1rem;
     border: double 2px black;
@@ -26,7 +28,7 @@ body{
 }
 .title, .description{
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 .save-btn{
     background-color: rgb(255, 255, 62);

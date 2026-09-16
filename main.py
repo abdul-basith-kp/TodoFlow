@@ -119,7 +119,8 @@ def edit_task(task_id):
         return redirect(url_for('register_page'))
     
     if request.method == "GET":
-        return render_template('edit-task.html', task_id=task_id)
+        task = tm.get_task_by_task_id(task_id)
+        return render_template('edit-task.html', task=task)
     
     user_id = session.get('id')
     new_title = request.form.get("title")
