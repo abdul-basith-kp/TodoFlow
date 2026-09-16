@@ -362,9 +362,9 @@ function setUpSearchBar(){
     })
 }
 
-let darkMode = false;
 
-function ChangeMode(){
+
+function setMode(){
     const navBar = document.querySelector(".nav-bar");
     const mainNavButtons = document.querySelectorAll(".main-nav-buttons a");
     const copyRightText = document.querySelector(".copy-right-text");
@@ -372,7 +372,8 @@ function ChangeMode(){
     const settingsLogo = document.querySelector('.settings-logo');
     const userLogo = document.querySelector('.account-logo');
 
-    if (! darkMode){
+
+    if (localStorage.getItem('dark-mode') === 'true'){
         document.body.style.backgroundColor = 'black';
         navBar.style.color = 'white';
         mainNavButtons.forEach(mainNavBtn=>mainNavBtn.style.color = 'white');
@@ -395,9 +396,19 @@ function ChangeMode(){
     }
 }
 
+let darkMode = false;
 function activateDarkModeButton(){
     const darkModeButton = document.querySelector(".mode-logo")
-    darkModeButton.addEventListener('click', ChangeMode)
+    darkModeButton.addEventListener('click', ()=>{
+        if (darkMode){
+            darkMode = false;
+        } else {
+            darkMode = true
+        }
+        localStorage.setItem('dark-mode', `${darkMode}`)
+        setMode()
+    })
+    setMode()
 }
 
 async function run() {
