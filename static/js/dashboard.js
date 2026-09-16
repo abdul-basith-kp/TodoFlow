@@ -51,4 +51,24 @@ async function loadDashboard() {
     totalCount.innerText = data['completed-count']  + data['pending-count'] + data['deleted-count'];
 }
 
+const darkMode = localStorage.getItem('dark-mode');
+
+const body = document.querySelector('body');
+const mainHeading = document.querySelector('.main-heading');
+const totalTasks = document.querySelector('.total-tasks');
+const copyRightText = document.querySelector('.copy-right-text');
+
+if (darkMode === 'true'){
+    body.style.backgroundColor = 'black';
+    mainHeading.style.color = 'white';
+    totalTasks.style.color = 'white';
+    copyRightText.style.color = 'white';
+} else {
+    body.style.backgroundColor = 'rgb(167, 236, 236)';
+    mainHeading.style.color = 'black';
+    totalTasks.style.color = 'black';
+    copyRightText.style.color = 'black';
+}
+
+
 loadDashboard()
