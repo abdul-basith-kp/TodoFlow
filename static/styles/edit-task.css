@@ -26,9 +26,10 @@ body{
 .main-paragraph{
     font-weight: bold;
 }
-.title, .description{
+.title, .description, .priority, .due-date{
     width: 100%;
     font-size: 1.1rem;
+    padding: 0.3rem;
 }
 .save-btn{
     background-color: rgb(255, 255, 62);
@@ -42,6 +43,7 @@ body{
     background-color: rgb(234, 234, 135);
 }
 .back-btn{
+    margin: 0.5rem;
     color: red;
 }
 .back-btn:hover{

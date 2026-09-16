@@ -372,7 +372,6 @@ function ChangeMode(){
     const settingsLogo = document.querySelector('.settings-logo');
     const userLogo = document.querySelector('.account-logo');
 
-
     if (! darkMode){
         document.body.style.backgroundColor = 'black';
         navBar.style.color = 'white';
@@ -382,6 +381,7 @@ function ChangeMode(){
         settingsLogo.setAttribute('src', 'static/images/settings-logo-white.png');
         userLogo.setAttribute('src', 'static/images/user-logo-white.png');
         darkMode = true;
+        localStorage.setItem('dark-mode', 'true')
     } else {
         document.body.style.backgroundColor = 'white';
         navBar.style.color = 'black';
@@ -391,6 +391,7 @@ function ChangeMode(){
         settingsLogo.setAttribute('src', 'static/images/settings-logo.png');
         userLogo.setAttribute('src', 'static/images/user-logo.png');
         darkMode = false;
+        localStorage.setItem('dark-mode', 'false')
     }
 }
 

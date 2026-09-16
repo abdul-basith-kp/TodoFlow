@@ -32,7 +32,7 @@
                     <div class="selection-box fr se w-100">
                         <div class="fc">
                             <label for="priority">Priority</label>
-                            <select name="priority" id="priority">
+                            <select name="priority" id="priority" class="priority">
                                 <option value="LOW" {% if task.priority == 'LOW' %}selected{% endif %}>LOW</option>
                                 <option value="MEDIUM" {% if task.priority == 'MEDIUM' %}selected{% endif %}>MEDIUM</option>
                                 <option value="HIGH" {% if task.priority == 'HIGH' %}selected{% endif %}>HIGH</option>
@@ -41,7 +41,7 @@
                     
                         <div class="fc">
                             <label for="due-date">Due date</label>
-                            <input id="due-date" name="due-date" type="date" value="{{ task.due_date }}" required>
+                            <input id="due-date" class="due-date" name="due-date" type="date" value="{{ task.due_date }}" required>
                         </div>
                     </div>
                 
