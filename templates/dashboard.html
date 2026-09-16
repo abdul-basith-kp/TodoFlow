@@ -6,62 +6,63 @@
 {% endblock %}
 
 {% block content %} 
+
 <h1 class="main-heading">Task Dashboard</h1>
+<div class="main-container fr se">
+    <div class="count-container fr sb">
 
-<div class="count-container fr sb">
-
-    <div class="completed-count-box fc c">
-        <div class="completed-progress-box fc fe">
-            <div class="completed-bar"></div>
+        <div class="completed-count-box fc c">
+            <div class="completed-progress-box fc fe">
+                <div class="completed-bar"></div>
+            </div>
+            <p class="completed-count">--</p>
+            <p class="count-heading">Completed Tasks</p>
         </div>
-        <p class="completed-count">--</p>
-        <p class="count-heading">Completed Tasks</p>
+
+        <div class="pending-count-bx fc c">
+            <div class="pending-progress-box fc fe">
+                <div class="pending-bar"></div>
+            </div>
+            <p class="pending-count">--</p>
+            <p class="count-heading">Pending Tasks</p>
+        </div>
+
+        <div class="deleted-count-box fc c">
+            <div class="deleted-progress-box fc fe">
+                <div class="deleted-bar"></div>
+            </div>
+            <p class="deleted-count">--</p>
+            <p class="count-heading">Deleted Tasks</p>
+        </div>
+
     </div>
 
-    <div class="pending-count-bx fc c">
-        <div class="pending-progress-box fc fe">
-            <div class="pending-bar"></div>
-        </div>
-        <p class="pending-count">--</p>
-        <p class="count-heading">Pending Tasks</p>
-    </div>
 
-    <div class="deleted-count-box fc c">
-        <div class="deleted-progress-box fc fe">
-            <div class="deleted-bar"></div>
-        </div>
-        <p class="deleted-count">--</p>
-        <p class="count-heading">Deleted Tasks</p>
-    </div>
+    <div class="dashboard-container">
 
+        <div class="completed-tasks-dashboard">
+            <p>Completed tasks: <span class="completed-percent">--</span>%</p>
+            <div class="completed-slider-box">
+                <div class="completed-slider"></div>
+            </div>
+        </div>
+
+        <div class="pending-tasks-dashboard">
+            <p>Pending tasks: <span class="pending-percent">--</span>%</p>
+            <div class="pending-slider-box">
+                <div class="pending-slider"></div>
+            </div>
+        </div>
+
+        <div class="deleted-tasks-dashboard">
+            <p>Deleted tasks: <span class="deleted-percent">--</span>%</p>
+            <div class="deleted-slider-box">
+                <div class="deleted-slider"></div>
+            </div>
+        </div>
+    </div>
 </div>
-
 <h2 class="total-tasks">Total Tasks: <span class="total-count">--</span></h2>
-
-<div class="dashboard-container">
-
-    <div class="completed-tasks-dashboard">
-        <p>Completed tasks: <span class="completed-percent">--</span>%</p>
-        <div class="completed-slider-box">
-            <div class="completed-slider"></div>
-        </div>
-    </div>
-
-    <div class="pending-tasks-dashboard">
-        <p>Pending tasks: <span class="pending-percent">--</span>%</p>
-        <div class="pending-slider-box">
-            <div class="pending-slider"></div>
-        </div>
-    </div>
-
-    <div class="deleted-tasks-dashboard">
-        <p>Deleted tasks: <span class="deleted-percent">--</span>%</p>
-        <div class="deleted-slider-box">
-            <div class="deleted-slider"></div>
-        </div>
-    </div>
-</div>
-
 <p class="copy-right-text">© 2026 Task Flow. All rights reserved.</p>
 
 {% endblock %}

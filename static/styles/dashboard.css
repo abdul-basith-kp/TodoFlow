@@ -1,19 +1,24 @@
 
-
+body{
+    background-color: rgb(167, 236, 236);
+}
+.main-container{
+    margin: 4rem 0;
+}
 .main-heading{
     text-align: center;
     font-size: 3rem;
     margin: 1rem 0;
 }
 .dashboard-container{
-    margin: 3rem 2rem;
+    background-color: white;
     border: solid 2px black;
     border-radius: 1rem;
 }
 .count-container{
-    width: 40%;
-    margin: 2rem auto;
-    border: solid 1px black;
+    background-color: white;
+    width: 30%;
+    border: solid 2px black;
     border-radius: 1rem;
     padding: 2rem;
 
@@ -48,7 +53,7 @@
 
 .completed-tasks-dashboard, .pending-tasks-dashboard, .deleted-tasks-dashboard{
     padding: 1rem;
-    margin: 3rem 1rem;
+    margin: 1rem;
     border-radius: 1rem;
 }
 
