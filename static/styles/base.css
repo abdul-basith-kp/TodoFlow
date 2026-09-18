@@ -32,6 +32,9 @@ body{
 .fe{
     justify-content: flex-end;
 }
+.w-20{
+    width: 20%;
+}
 .w-100{
     width: 100%;
 }

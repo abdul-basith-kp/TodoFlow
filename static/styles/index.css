@@ -108,9 +108,27 @@
     width: 50%;
 }
 footer{
-    min-height: 100vh;
+    background-color: white;
+    box-shadow: #8B5CF6 10px 10px 100px;
+    padding: 2rem 0;
 }
-
+.footer-container{
+    min-height: 50vh;
+}
+footer a{
+    color: black;
+    font-weight: bold;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+.footer-paragraph{
+    font-size: 1.2rem;
+    color: rgb(86, 86, 86);
+}
+.copy-right-text{
+    text-align: center;
+}
 /* Tablet */
 @media (max-width: 768px) {
     /* tablet styles */
