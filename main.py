@@ -1,4 +1,4 @@
-
+from flask_socketio import SocketIO, emit
 from flask import Flask, render_template, request, redirect, url_for
 from flask import session
 
@@ -23,6 +23,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 app.secret_key = os.getenv("SECRET_KEY")
 
 gv = GeneralValidator()
@@ -153,13 +154,19 @@ def get_tasks(status):
 
 @app.route("/community", methods=['POST', 'GET'])
 def community_page():
-    return render_template("community-page.html")
+    return render_template("community-page.html", user_id=session.get('id'))
 
     
 @app.route("/community_messages", methods=['GET'])
 def community_messages():
-    messages = cmm.get_msgs(session.get('username'))
+    messages = cmm.get_msgs()
     return messages
+
+@app.route('/current-user')
+def current_user():
+    return {
+        'current_user': session.get('id')
+    }
 
 @app.route('/add-message/<string:message>', methods=['POST'])
 def add_message(message):
@@ -186,10 +193,39 @@ def get_user():
         'username': session.get('username')
     }
 
+@socketio.on("connect")
+def connect():
+    emit('c',
+        {
+            'user_id': session.get('id'),
+            'username': session.get('username')
+        }, broadcast=True)
+
+@socketio.on("disconnect")
+def disconnect():
+      emit('dc',
+            {
+                'user_id': session.get('id'),
+                'username': session.get('username')
+            }, broadcast=True)
+
+@socketio.on('send-message')
+def send_message(msg):
+    data = {
+        'user_id': session.get('id'),
+        'username':session.get('username'),
+        'msg': msg
+    }
+    emit(
+        'msg-received',
+        data,
+        broadcast=True
+    )
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index_page'))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    socketio.run(app=app, host="0.0.0.0", port=5000, debug=True)

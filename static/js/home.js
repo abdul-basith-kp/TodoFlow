@@ -3,7 +3,7 @@ console.log(window.location)
 async function getTasks(status) {
 
   try {
-   const response = await fetch(`http://127.0.0.1:5000/get_tasks/${status}`);
+   const response = await fetch(`/get_tasks/${status}`);
 
     if (!response.ok) {
       throw new Error('Failed to fetch tasks');
@@ -83,7 +83,7 @@ function setUpNavbar() {
     })
     accountButtons.forEach(accountButton => {
         accountButton.addEventListener('click', ()=>{
-            window.location.href = 'http://127.0.0.1:5000/account'
+            window.location.href = '/account'
         })
         
     })
@@ -287,7 +287,7 @@ function loadCommunity() {
     for (const communityButton of communityButtons){
         communityButton.addEventListener("click", (evt)=>{
         evt.preventDefault();
-        window.location.href = "http://127.0.0.1:5000/community"
+        window.location.href = "/community"
 
     })
     }
@@ -299,7 +299,7 @@ async function setUpDashboard(){
     for (const dashboardButton of dashboardButtons){
         dashboardButton.addEventListener('click', (evt)=>{
         evt.preventDefault()
-        window.location.href = "http://127.0.0.1:5000/dashboard"
+        window.location.href = "/dashboard"
     })
     }
     

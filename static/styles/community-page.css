@@ -11,7 +11,7 @@ body{
 .msg-container{
     background-color: rgb(255, 255, 255);
     max-width: 1000px;
-    margin: 2rem auto;
+    margin: 4rem auto;
     min-height: 90vh;
     padding: 2rem;
     border: solid 1px rgb(0, 0, 0);
@@ -30,6 +30,7 @@ body{
 }
 .msg{
     font-size: 1.3rem;
+    overflow-wrap: break-word;
 }
 .input-container{
     position: fixed;
@@ -53,6 +54,14 @@ body{
 }
 .send-btn:hover{
     background-color: rgb(71, 36, 137);
+}
+.connected-message{
+    text-align: center;
+    color: green;
+}
+.disconnected-message{
+    text-align: center;
+    color: red;
 }
 .you{
     text-align: right;

@@ -1,8 +1,7 @@
 
-
-
+let socketio = io();
 async function getMessages() {
-    const response = await fetch('http://127.0.0.1:5000/community_messages')
+    const response = await fetch('/community_messages')
     if (!response.ok){
         throw new Error("Failed to fetch community messages")
     }
@@ -11,22 +10,35 @@ async function getMessages() {
     
 }
 
+async function getCurrentUserId() {
+    const response = await fetch('/current-user')
+    const data = await response.json()
+    return data.current_user
+}
 
-async function showMessages() {
-    const messageContainer = document.querySelector(".msg-container")
-    messageContainer.innerHTML = ''
-    const messages = await getMessages()
+let currentUserId = null;
+async function loadCurrentUserId() {
+    currentUserId = await getCurrentUserId();
+}
 
-    for(const msg of messages){
+
+const messageContainer = document.querySelector(".msg-container")
+function createMessage(msg){
+    
     const messageBox = document.createElement('div');
     messageBox.classList.add('msg-box');
-    if (msg.username === 'you'){
+    if (msg.user_id === currentUserId){
         messageBox.classList.add('you')
     }
 
     const sender = document.createElement('p');
     sender.classList.add('sender')
-    sender.innerText = msg.username;
+    if (msg.user_id === currentUserId){
+        sender.innerText = 'you'
+    } else {
+        sender.innerText = msg.username;
+    }
+    
     
 
     const message = document.createElement('p');
@@ -37,13 +49,30 @@ async function showMessages() {
     messageBox.appendChild(message);
 
     messageContainer.appendChild(messageBox);
+}
+
+function smoothScroll(){
+    window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+async function showMessages() {
+   
+    messageContainer.innerHTML = ''
+    const messages = await getMessages()
+
+    for(const msg of messages){
+        createMessage(msg);
     }
    
+    smoothScroll()
 
 }
 
 async function sendMessage(msg){
-    const response = await fetch(`http://127.0.0.1:5000/add-message/${msg}`, ({
+    const response = await fetch(`/add-message/${msg}`, ({
         method:'POST'
     }))
     if (!response.ok){
@@ -58,13 +87,39 @@ async function initializeMessageBox() {
     sendButton.addEventListener('click', ()=>{
         if (inputBar.value.trim() !== ''){
             sendMessage(inputBar.value);
+            socketio.emit("send-message", inputBar.value)
             inputBar.value = '';
         }
 })
 }
 
 
-showMessages()
 
-initializeMessageBox()
+socketio.on('c', (data)=>{
+    const connectedMessage = document.createElement('p');
+    connectedMessage.classList.add('connected-message')
+    connectedMessage.innerText = `${data.username} connected`;
+    messageContainer.append(connectedMessage);
+    smoothScroll()
+})
+
+socketio.on('dc', (data)=>{
+    const disConnectedMessage = document.createElement('p');
+    disConnectedMessage.classList.add('disconnected-message')
+    disConnectedMessage.innerText = `${data.username} disconnected`;
+    messageContainer.append(disConnectedMessage)
+    smoothScroll()
+})
+
+socketio.on('msg-received', (data)=>{
+    createMessage(data);
+    smoothScroll()
+})
+async function run() {
+    await loadCurrentUserId()
+    showMessages()
+    initializeMessageBox()
+}
+
+run()
 
