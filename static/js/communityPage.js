@@ -1,4 +1,21 @@
 
+let darkMode = localStorage.getItem('dark-mode');
+
+const body = document.querySelector('body');
+const messageContainer = document.querySelector(".msg-container")
+
+if (darkMode === 'true'){
+    body.style.backgroundColor = 'black';
+    messageContainer.style.backgroundColor = 'black';
+    messageContainer.style.border = 'solid 1px white';
+} else {
+    body.style.backgroundColor = 'white';
+    messageContainer.style.backgroundColor = 'white';
+    messageContainer.style.border = 'solid 1px black';
+
+}
+
+
 let socketio = io();
 async function getMessages() {
     const response = await fetch('/community_messages')
@@ -22,7 +39,7 @@ async function loadCurrentUserId() {
 }
 
 
-const messageContainer = document.querySelector(".msg-container")
+
 function createMessage(msg){
     
     const messageBox = document.createElement('div');

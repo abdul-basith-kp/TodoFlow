@@ -80,7 +80,7 @@
 
 .suggestion-container{
     display: none;
-    width: 50%;
+    width: 60%;
     height: 20rem;
     margin: auto;
     overflow-y: scroll;
@@ -88,7 +88,7 @@
     border-radius: 1rem;
     scrollbar-width: none;
     position: absolute;
-    left: 25%;
+    left: 20%;
     top: 100%;
 }
 .search-cross-btn{
