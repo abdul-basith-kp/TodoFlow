@@ -16,6 +16,8 @@ if (darkMode === 'true'){
 }
 
 
+
+
 let socketio = io();
 async function getMessages() {
     const response = await fetch('/community_messages')

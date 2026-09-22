@@ -139,6 +139,8 @@ def edit_task(task_id):
 @app.route('/get_tasks/<string:status>', methods=['GET'])
 def get_tasks(status):
     tasks = tm.get_tasks_by_status_and_user_id(status, session.get('id'))
+    if not tasks:
+        return []
     return [
         {
             'task_id': task.id,

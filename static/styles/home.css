@@ -5,9 +5,12 @@
 }
 .welcome-text{
     margin: 0;
+    max-width: 60%;
 }
 .username-span{
     color: #8B5CF6;
+    overflow-wrap: break-word;
+    
 }
 .main-nav-buttons a{
     color: black;

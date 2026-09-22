@@ -1,5 +1,11 @@
 
-console.log(window.location)
+
+
+const userSpan = document.querySelector('.username-span');
+if ( userSpan.innerText.length >= 16){
+    userSpan.innerText = 'user';
+}
+
 async function getTasks(status) {
 
   try {
@@ -17,7 +23,7 @@ async function getTasks(status) {
   }
 }
 
-const hamburgerButton = document.querySelector('.hamburger-btn');
+
 const menuContainer = document.querySelector('.menu-container');
 
 let pendingButtonActive = true;
@@ -89,15 +95,32 @@ function setUpNavbar() {
     })
     
 
-    let menuContainerVisible = false;
-    hamburgerButton.addEventListener('click', ()=>{
+    
+   
+
+}
+const hamburgerButton = document.querySelector('.hamburger-btn');
+let menuContainerVisible = false;
+function setUpHamburgerButton(){
+        hamburgerButton.addEventListener('click', ()=>{
         if (!menuContainerVisible){
             menuContainer.style.display = 'flex';
-            hamburgerButton.setAttribute('src', '../static/images/cross-logo.png')
+            if (localStorage.getItem('dark-mode') === 'true'){
+                hamburgerButton.setAttribute('src', '../static/images/cross-logo-white.png')
+            } else {
+                hamburgerButton.setAttribute('src', '../static/images/cross-logo.png')
+            }
+            
             menuContainerVisible = true;
+
         } else {
             menuContainer.style.display = 'none';
-            hamburgerButton.setAttribute('src', '../static/images/hamburger-logo.png')
+            if (localStorage.getItem('dark-mode') === 'true'){
+                hamburgerButton.setAttribute('src', '../static/images/hamburger-logo-white.png')
+            } else {
+                hamburgerButton.setAttribute('src', '../static/images/hamburger-logo.png')
+            }
+            
             menuContainerVisible = false;
         }
     })
@@ -109,9 +132,10 @@ function closeMenu() {
         menuContainer.style.display = 'none';
         hamburgerButton.setAttribute('src', '../static/images/hamburger-logo.png')
     }
-    setUpNavbar();
 }
-window.addEventListener('resize', closeMenu)
+window.addEventListener('resize', closeMenu);
+window.addEventListener('resize', setUpNavbar);
+
 
 
 
@@ -211,9 +235,11 @@ async function showTasks(status='PENDING', titleStartsWith=''){
     tasks = await getTasks(status)
     
     const taskContainer = document.querySelector(".task-container");
-    taskContainer.innerHTML = '';
- 
+    if (taskContainer){
+        taskContainer.innerHTML = '';   
+    }
 
+    
     for( let task of tasks){
         if (! task.title.startsWith(titleStartsWith)){
             continue
@@ -381,8 +407,10 @@ function setMode(){
         modeLogo.setAttribute('src', 'static/images/mode-logo-white.png');
         settingsLogo.setAttribute('src', 'static/images/settings-logo-white.png');
         userLogo.setAttribute('src', 'static/images/user-logo-white.png');
+        hamburgerButton.setAttribute('src', '../static/images/hamburger-logo-white.png')
         darkMode = true;
-        localStorage.setItem('dark-mode', 'true')
+        localStorage.setItem('dark-mode', 'true');
+        
     } else {
         document.body.style.backgroundColor = 'white';
         navBar.style.color = 'black';
@@ -391,24 +419,28 @@ function setMode(){
         modeLogo.setAttribute('src', 'static/images/mode-logo.png');
         settingsLogo.setAttribute('src', 'static/images/settings-logo.png');
         userLogo.setAttribute('src', 'static/images/user-logo.png');
+        hamburgerButton.setAttribute('src', '../static/images/hamburger-logo.png')
         darkMode = false;
         localStorage.setItem('dark-mode', 'false')
     }
 }
 
 let darkMode = false;
+const darkModeButtons = document.querySelectorAll(".mode-logo")
 function activateDarkModeButton(){
-    const darkModeButton = document.querySelector(".mode-logo")
-    darkModeButton.addEventListener('click', ()=>{
-        if (darkMode){
-            darkMode = false;
-        } else {
-            darkMode = true
-        }
-        localStorage.setItem('dark-mode', `${darkMode}`)
-        setMode()
-    })
-    setMode()
+    
+
+    darkModeButtons.forEach(darkModeButton=>
+        darkModeButton.addEventListener('click', ()=>{
+            if (darkMode){
+                darkMode = false;
+            } else {
+                darkMode = true
+            }
+            localStorage.setItem('dark-mode', `${darkMode}`)
+            setMode()
+        }))
+    
 }
 
 async function run() {
@@ -419,5 +451,7 @@ async function run() {
     setUpDashboard();
     setUpSearchBar();
     activateDarkModeButton();
+    setUpHamburgerButton();
+    setMode();
 }
 run()
