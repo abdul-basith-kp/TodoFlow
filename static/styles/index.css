@@ -32,6 +32,11 @@
     background-color: rgb(212, 213, 214);
     
 }
+.hamburger-btn{
+    display: none;
+    width: 4rem;
+    margin: auto;
+}
 .hero-main-heading{
     font-size: 6rem;
     text-align: center;
@@ -61,13 +66,12 @@
     text-align: center;
 }
 .home-demo-img{
-    width: 80rem;
-    padding: 2rem;
+    width: 100%;
+    margin: auto;
     border-radius: 1rem;
     box-shadow: #8B5CF6 10px 10px 300px;
 }
 .demo-img-container{
-    margin: auto;
     text-align: center;
     margin: 2rem;
     
@@ -100,13 +104,17 @@
 .features-img{
     width: 50rem;
 }
-.main-feature-img{
-    width: 90%;
-    margin: 0 2rem;
+.main-feature-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .main-feature-box{
+    min-height: 50vh;
     margin: 1rem;
     width: 50%;
+    background-color: #8B5CF6;
 }
 .cta-section{
     background-color: rgb(255, 255, 255);
@@ -139,17 +147,78 @@ footer a:hover{
 .copy-right-text{
     text-align: center;
 }
-/* Tablet */
+.phone-br{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .main-nav-container{
+        display: none;
+    }
+    .hamburger-btn{
+        display: block;
+    }
+    .demo-img-container{
+        margin: 0;
+    }
+    .home-demo-img{
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .main-features-container{
+        flex-direction: column;
+    }
+    .feature-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .feature-box{
+        width: 95%;
+        margin: 1rem auto;
+    } 
+    .main-feature-box{
+        width: 95%;
+        margin: 2rem auto;
+    } 
+    .hero-main-heading{
+        font-size: 3rem;
+        margin: 2rem 0;
+    }
+    .hero-main-paragraph{
+        font-size: 1.5rem;
+    }
+    .laptop-br{
+        display: none;
+    }
+    .phone-br{
+        display: block;
+    }
+}
+
+
 @media (max-width: 768px) {
-    /* tablet styles */
+    .hero-get-started-btn, .hero-how-it-works-btn{
+        margin: 0.3rem;
+    }
+    .hero-main-heading{
+        font-size: 3rem;
+    }
+    .hero-main-paragraph{
+        font-size: 1.2rem;
+        margin: 2rem;
+    }
+    .feature-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .feature-box{
+        width: 95%;
+        margin: 1rem auto;
+    }
+    .main-feature-box{
+        width: 95%;
+        margin: 2rem auto;
+    }
 }
 
-/* Mobile */
-@media (max-width: 576px) {
-    /* mobile styles */
-}
-
-/* Small mobile */
-@media (max-width: 400px) {
-    /* small phone styles */
-}

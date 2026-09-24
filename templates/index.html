@@ -14,24 +14,25 @@
         <div>
         <img class="logo-img" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
         </div>
-        <div>
+        <div class="main-nav-container">
             <a class="nav-btn how-it-works-btn" href="">How it works</a>
             <a class="nav-btn productivity-btn" href="">Productivity</a>
             <a class="nav-btn features-btn" href="">Features</a>
             <a class="nav-btn pricing-btn" href="">Pricing</a>
         </div>
-        <div>
+        <div class="fr c">
             <a class="nav-btn login-btn" href="{{ url_for('login_page') }}">Login</a>
             <a class="nav-btn register-btn" href="{{  url_for('register_page') }}">Register</a>
+            <a href=""><img class="hamburger-btn" src="{{ url_for('static', filename='images/hamburger-logo.png') }}" alt=""></a>
         </div>
     </div>
 
     <div class="hero-section">
         <div>
-            <h1 class="hero-main-heading">Turn Your To-Dos <br>Into <span class="hero-main-span">Done</span>.</h1>
+            <h1 class="hero-main-heading">Turn Your <br class="phone-br">To-Dos <br class="laptop-br">Into <span class="hero-main-span">Done</span>.</h1>
             <p class="hero-main-paragraph">Plan your tasks, prioritize what matters, and keep your day moving — 
                 all in one beautifully simple workspace.</p>
-            <div class="fr c">
+            <div class="hero-btns fr c">
                 <a class="hero-get-started-btn" href="">Get Started — It's Free</a>
                 <a class="hero-how-it-works-btn" href="">See How It Works →</a>
             </div>
@@ -39,7 +40,20 @@
             <p class="hero-trust-paragraph">No clutter. No complicated setup. Just a better way to get things done.</p>
         </div>
         <div class="demo-img-container">
-            <img class="home-demo-img"src="{{ url_for('static', filename='images/home-screenshot.png') }}" alt="">
+            <picture class="home-demo-img">
+                <source 
+                media="(max-width: 768px)"
+                srcset="{{ url_for('static', filename='images/home-screenshot-03.png') }}"    
+                >
+
+                <source 
+                media="(max-width: 1024px)"
+                srcset="{{ url_for('static', filename='images/home-screenshot-02.png') }}"    
+                >
+
+                <img class="home-demo-img" src="{{ url_for('static', filename='images/home-screenshot.png') }}" alt="">
+            </picture>
+            
         </div>
     </div>
 
@@ -81,12 +95,8 @@
         </div>
 
         <div class="main-features-container fr se">
-           <div class="main-feature-box">
-            <img class="main-feature-img" src="{{ url_for('static', filename='images/main-feature-01.png') }}" alt="">
-           </div>
-           <div class="main-feature-box">
-            <img class="main-feature-img" src="{{ url_for('static', filename='images/main-feature-02.png') }}" alt="">
-           </div>
+           <div class="main-feature-box"></div>
+           <div class="main-feature-box"></div>
         </div>
     </div>
 
