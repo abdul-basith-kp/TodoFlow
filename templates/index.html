@@ -8,162 +8,25 @@
     
     {% block content %}
 
+    <div class="welcome-section">
 
+        <h1 class="welcome-heading">Still Using <br class="laptop-break"> <span class="pen-span">Pen</span> and
+             <span class="paper-span">Paper</span>?</h1>
 
-    <div class="nav-bar fr sb">
-        <div>
-        <img class="logo-img" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
-        </div>
-        <div class="main-nav-container">
-            <a class="nav-btn how-it-works-btn" href="">How it works</a>
-            <a class="nav-btn productivity-btn" href="">Productivity</a>
-            <a class="nav-btn features-btn" href="">Features</a>
-            <a class="nav-btn pricing-btn" href="">Pricing</a>
-        </div>
-        <div class="fr c">
-            <a class="nav-btn login-btn" href="{{ url_for('login_page') }}">Login</a>
-            <a class="nav-btn register-btn" href="{{  url_for('register_page') }}">Register</a>
-            <a href=""><img class="hamburger-btn" src="{{ url_for('static', filename='images/hamburger-logo.png') }}" alt=""></a>
-        </div>
-    </div>
+        <p class="welcome-paragraph">Your tasks deserve better.</p>
 
-    <div class="hero-section">
-        <div>
-            <h1 class="hero-main-heading">Turn Your <br class="phone-br">To-Dos <br class="laptop-br">Into <span class="hero-main-span">Done</span>.</h1>
-            <p class="hero-main-paragraph">Plan your tasks, prioritize what matters, and keep your day moving — 
-                all in one beautifully simple workspace.</p>
-            <div class="hero-btns fr c">
-                <a class="hero-get-started-btn" href="">Get Started — It's Free</a>
-                <a class="hero-how-it-works-btn" href="">See How It Works →</a>
-            </div>
-            
-            <p class="hero-trust-paragraph">No clutter. No complicated setup. Just a better way to get things done.</p>
+        <div class="welcome-btns-container">
+            <a href="{{ url_for('register_page') }}" class="register-btn">Register for Free</a>
+            <a href="{{ url_for('login_page') }}" class="login-btn">Login</a>
         </div>
-        <div class="demo-img-container">
-            <picture class="home-demo-img">
-                <source 
-                media="(max-width: 768px)"
-                srcset="{{ url_for('static', filename='images/home-screenshot-03.png') }}"    
-                >
 
-                <source 
-                media="(max-width: 1024px)"
-                srcset="{{ url_for('static', filename='images/home-screenshot-02.png') }}"    
-                >
+        <p class="secondary-span"><span class="todo-span">To-Do Flow</span> keeps your work,
+        your plans, and your day organized.</p>
 
-                <img class="home-demo-img" src="{{ url_for('static', filename='images/home-screenshot.png') }}" alt="">
-            </picture>
-            
-        </div>
     </div>
 
 
-    <div class="features-section">
-        <p class="feature-paragraph">See What To-Do Flow Can Do</p>
-        <div class="feature-container fr se">
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/create-task.png') }}" alt="">
-                <h3>Task Management	Create</h3>
-                <p>edit and delete tasks</p>
-            </div>
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/smart-priorities.png') }}" alt="">
-                <h3>Smart Priorities</h3>
-                <p>LOW / MEDIUM / HIGH</p>
-            </div>
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/task-completion.png') }}" alt="">
-                <h3>Task Completion</h3>
-                <p>Track completed tasks</p>
-            </div>
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/quick-organization.png') }}" alt="">
-                <h3>Quick Organization</h3>
-                <p>Keep tasks structured</p>
-            </div>
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/dark-and-light-mode.png') }}" alt="">
-                <h3>Dark & Light Mode</h3>
-                <p>Personalize the interface</p>
-            </div>
-            <div class="feature-box fc c">
-                <img src="{{ url_for('static', filename='images/simple-and-focused.png') }}" alt="">
-                <h3>Simple & Focused</h3>
-                <p>	Minimal, distraction-free workflow</p>
-            </div>
-            
-        </div>
-
-        <div class="main-features-container fr se">
-           <div class="main-feature-box"></div>
-           <div class="main-feature-box"></div>
-        </div>
-    </div>
-
-    <div class="cta-section fc c">
-        <h2 class="cta-heading tc">
-            GET STARTED TO DAY  
-        </h2>
-        <div>
-            <a class="hero-get-started-btn" href="">Get Started — It's Free</a>
-            <a class="hero-how-it-works-btn" href="">See How It Works →</a>
-        </div>
-    </div>
-
-    <footer >
-        <div class="footer-container fr se">
-
-            <div class="fc sb w-20">
-                <div>
-                    <img class="logo-img" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
-                </div>
-                <p>"Plan your tasks, prioritize what matters, and keep your day moving — 
-                    all in one beautifully simple workspace."</p>
-            </div>
-            <div class="fc c">
-                <p class="footer-paragraph">Product</p>
-                <a href="">Features</a>
-                <a href="">What's New</a>
-                <a href="">Notion AI</a>
-                <a href="">Pricing</a>
-                <a href="">Request a demo</a>
-                <a href="">Download</a>
-            </div>
-            <div class="fc c">
-                <p class="footer-paragraph">Resources</p>
-                <a href="">Customer stories</a>
-                <a href="">Connections</a>
-                <a href="">Marketplace</a>
-                <a href="">Help Center</a>
-                <a href="">Academy</a>
-                <a href="">Community</a>
-            </div>
-            <div class="fc c">
-                <p class="footer-paragraph">Company</p>
-                <a href="">About us</a>
-                <a href="">Careers</a>
-                <a href="">Security</a>
-                <a href="">Status</a>
-                <a href="">Terms & privacy</a>
-                <a href="">Your privacy rights</a>
-            </div>
-            <div class="fc c">
-                <p class="footer-paragraph">ToDo Flow for</p>
-                <a href="">Enterprise</a>
-                <a href="">Small businesses</a>
-                <a href="">Startups</a>
-                <a href="">Developers</a>
-            </div>
-        </div>
-        <p class="copy-right-text">© 2026 Task Flow. All rights reserved.</p>
-        
-    </footer>
-
-
-
-
-
-
+   
     {% endblock %}
     
 

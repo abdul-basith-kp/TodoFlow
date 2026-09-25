@@ -1,224 +1,94 @@
-
-
-.nav-bar{
-    max-width: 1400px;
-    margin: auto;
-    margin-top: 2rem;
-    border-radius: 1rem;
+html {
+    scroll-snap-type: y mandatory;
 }
-.logo-img{
-    width: 7rem;
-}
-.nav-btn{
-    font-size: 1.3rem;
-    color: rgb(0, 0, 0);
-    margin: 0 1rem;
-}
-.nav-btn:hover{
-    text-decoration: underline;
-}
-.register-btn{
-    background: linear-gradient(135deg, #06B6D4, #6366F1, #8B5CF6);
+*{
     color: white;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
 }
-.login-btn{
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
-    outline: solid 2px black;
-}
-.login-btn:hover{
-    background-color: rgb(212, 213, 214);
-    
-}
-.hamburger-btn{
-    display: none;
-    width: 4rem;
-    margin: auto;
-}
-.hero-main-heading{
-    font-size: 6rem;
-    text-align: center;
-}
-.hero-main-span{
-    color: #8B5CF6;
-}
-.hero-main-paragraph{
-    text-align: center;
-    font-size: 2rem;
-}
-.hero-get-started-btn{
-    color: white;
-    background-color: #8B5CF6;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
-}
-.hero-how-it-works-btn{
-    color: #8B5CF6;
-    border: solid 1px #8B5CF6;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
-}
-.hero-trust-paragraph{
-    text-align: center;
-}
-.home-demo-img{
-    width: 100%;
-    margin: auto;
-    border-radius: 1rem;
-    box-shadow: #8B5CF6 10px 10px 300px;
-}
-.demo-img-container{
-    text-align: center;
-    margin: 2rem;
-    
-}
-.feature-paragraph{
-    padding: 1rem 3rem;
-}
-.feature-container{
-    gap: 0.5rem;
-    margin: 1rem;
-}
-.feature-box{
-    flex: 1;
-    /* border: solid 2px #0d0d0d; */
-    background-color: white;
-    padding: 2rem 1rem;
-    border-radius: 1rem;
-    height: 8rem;
-    box-shadow: #000000 1px 1px 10px;
-}
-.feature-box img{
-    width: 6rem;
-}
-.feature-box:hover{
-    box-shadow: #8B5CF6 1px 1px 10px;
-}
-.feature-img-container{
-    margin: 2rem;
-}
-.features-img{
-    width: 50rem;
-}
-.main-feature-container{
+.welcome-section{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background-image: url('../images/hero-laptop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.main-feature-box{
-    min-height: 50vh;
-    margin: 1rem;
-    width: 50%;
-    background-color: #8B5CF6;
-}
-.cta-section{
-    background-color: rgb(255, 255, 255);
-    margin: 4rem 0;
-    padding: 2rem 0;
-}
-.cta-heading{
-    font-size: 3rem;
-    margin: 2rem;
-}
-footer{
-    background-color: white;
-    box-shadow: #8B5CF6 10px 10px 100px;
-    padding: 2rem 0;
-}
-.footer-container{
-    min-height: 50vh;
-}
-footer a{
-    color: black;
+.welcome-heading{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 6rem;
     font-weight: bold;
 }
-footer a:hover{
-    text-decoration: underline;
+.welcome-btns-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
 }
-.footer-paragraph{
-    font-size: 1.2rem;
-    color: rgb(86, 86, 86);
+.pen-span, .paper-span{
+    color: rgb(255, 241, 84);
 }
-.copy-right-text{
+.secondary-span{
     text-align: center;
 }
-.phone-br{
-    display: none;
+.todo-span{
+    font-size: 1.5rem;
+    color: rgb(0, 255, 77);
+    font-weight: bold;
+
+}
+.register-btn{
+    color: rgb(253, 254, 254);
+    font-weight: bold;
+    background-color: rgb(177, 67, 255);
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+
+}
+.login-btn{
+    color: rgb(177, 67, 255);
+    border: solid 2px rgb(177, 67, 255);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+.login-btn:hover, .register-btn:hover{
+    outline: solid 1px white;
 }
 
-@media (max-width: 1024px) {
-    .main-nav-container{
-        display: none;
-    }
-    .hamburger-btn{
-        display: block;
-    }
-    .demo-img-container{
-        margin: 0;
-    }
-    .home-demo-img{
-        width: 100%;
-        margin: 2rem 0;
-    }
-    .main-features-container{
-        flex-direction: column;
-    }
-    .feature-container{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .feature-box{
-        width: 95%;
-        margin: 1rem auto;
-    } 
-    .main-feature-box{
-        width: 95%;
-        margin: 2rem auto;
-    } 
-    .hero-main-heading{
-        font-size: 3rem;
-        margin: 2rem 0;
-    }
-    .hero-main-paragraph{
-        font-size: 1.5rem;
-    }
-    .laptop-br{
-        display: none;
-    }
-    .phone-br{
-        display: block;
-    }
+.nav-bar{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px white;
+    position: fixed;
+    top: 0;
 }
 
-
-@media (max-width: 768px) {
-    .hero-get-started-btn, .hero-how-it-works-btn{
-        margin: 0.3rem;
-    }
-    .hero-main-heading{
-        font-size: 3rem;
-    }
-    .hero-main-paragraph{
-        font-size: 1.2rem;
-        margin: 2rem;
-    }
-    .feature-container{
-        display: flex;
-        flex-direction: column;
-    }
-    .feature-box{
-        width: 95%;
-        margin: 1rem auto;
-    }
-    .main-feature-box{
-        width: 95%;
-        margin: 2rem auto;
-    }
+.welcome-section,
+.hero-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
+@media (max-width: 1000px){
+    .welcome-section{
+    background-image: url('../images/hero-tablet.png');
+}
+}
+@media (max-width: 768px){
+    .welcome-heading{
+        text-align: left;
+        margin-left: 2rem;
+    }
+    .welcome-section{
+    background-image: url('../images/hero-mobile.png');
+}
+}
